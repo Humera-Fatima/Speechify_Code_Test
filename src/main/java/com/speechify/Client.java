@@ -27,4 +27,7 @@ public class Client {
     public void setName(String name) {
         this.name = name;
     }
+
+
+    
 } 
