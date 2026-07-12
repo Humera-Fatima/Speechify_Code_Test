@@ -34,10 +34,27 @@ public class UserService {
                     return false;
                 }
 
+
+                private boolean inValid(
+                    String firstname,
+                    String surname,
+                    String email,
+                    LocalDate sateOfBirth,
+                    String clientID)
+                    {
+                    return isNotBlank(firstname) &&
+                        isNotBlank(surname) &&
+                        isNotBlank(email) &&
+                         dateOfBirth!= null &&
+                        isNotBlank(clientID);
+                    
+                }
                 File dbFile = new File(DB_FILE);
                 if (!dbFile.exists()) {
                     return false;
                 }
+                private boolean (String value){
+                    return value !=null && !value.trim().isEmpty();}
 
                 ObjectNode root = (ObjectNode) objectMapper.readTree(dbFile);
                 ArrayNode users = (ArrayNode) root.get("users");
