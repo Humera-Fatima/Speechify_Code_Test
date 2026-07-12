@@ -11,8 +11,12 @@ package com.speechify;
  *  - Read guides about how to code an LRU cache.
  */
 
-public class LRUCacheProvider {
+public final  class LRUCacheProvider {
+
+    private LRUCacheProvider(){
+    }
+    
     public static <T> LRUCache<T> createLRUCache(CacheLimits options) {
-        throw new UnsupportedOperationException("Implement this function");
+        return new SimpleLRUCache<>(options.getMaxItemsCount());
     }
 }
